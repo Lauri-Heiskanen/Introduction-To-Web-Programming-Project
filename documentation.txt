@@ -1,0 +1,53 @@
+IDEA:
+Player moves a box through courses, avoiding dangers.
+Player must collect a key to open the door to the next level.
+Coins are just collectables and only increment their counter.
+
+Player can pass through objects of the same colour as the player, but will lose if they touch an object of a different colour (except walls and other special objects).
+Players colour can be changed by touching a pain bucket.
+
+There is a popular game very similar to this called "World's Hardest Game" (couldn't find an official website or anything of the sort).
+But seeing as this is a programming course and not game dev, I don't find that to be a huge issuegiven that I've added different features.
+
+The 6th level is the final boss fight where the player has to dodge incoming projectiles but in such a manner that they hit the giant lock.
+Once the locks health depletes, it opens. This door will lead to the final room where a prize awaits.
+
+TECHNICAL SOLUTIONS:
+Phaser.GameObjects.Rectangle doesn't work as described in the documentation and cannot be added to a group ( or at least I couldn't get it to work).
+So instead, single pixel textures were used in images and scaled to the wanted dimensions.
+
+Each danger is associated with n points. They are spawned on the first one. Once the level has loaded they begin moving to the next point.
+After reaching it, they move to the next point. This continues until the last point is reached. Then they move to their starting point and start the cycle again.
+The movement isn't absolutely precise, but it should be precise enough as to not cause problems.
+To avoid any issues, before a danger is set to move, they are teleported to the exact point they were supposed to end up.
+
+The lock/door works as follows: key is collected => create open door => destroy lock
+This is most likely more resource intensive than just change the texture and state of the lock/door.
+
+POINTS:
+2 Well written report
+4 Application is responsive and can be used on both desktop and mobile environment
+2 Application works on Firefox, Safari, Edge and Chrome
+4 There is a clear plot in the game. It has a start and end.
+4 There are more than one map
+3 There are enemies that can hurt the player
+
+1 Paintcans that change the players colour
+1 Damage is dependant on the colours of the object and the player
+1 Final boss has a health bar
+1 Collecting a key changes the lock into an door
+
+So 23 points in total. Though, some points are questionable.
+Whether or not the game has moving parts depends on whether you count the coloured boxes as enemies or other objects. Either way the points remain the same.
+
+SOURCES:
+for Phaser:
+https://photonstorm.github.io/phaser3-docs/
+https://newdocs.phaser.io/docs/3.60.0/
+
+for JavaScript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+TOOLS USED:
+sprite creation: https://www.piskelapp.com/p/create/sprite
+

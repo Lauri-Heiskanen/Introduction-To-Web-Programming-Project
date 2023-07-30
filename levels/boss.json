@@ -1,0 +1,14 @@
+{
+  "texture": "lock",
+  "bossHP": 10,
+  "projectileChance": 100,
+  "projectileSpeed": 300,
+  "projectileSize": 100,
+  "projectileWarningTime": 500,
+  "roomWallThickness": 25,
+  "x0": 300,
+  "y0": 25,
+  "x1": 700,
+  "y1": 425,
+  "bossBar": { "x0": 150, "y0": 5, "x1": 850, "y1": 20, "colour": "green" }
+}
